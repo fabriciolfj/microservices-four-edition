@@ -1,13 +1,14 @@
 package se.magnus.util.http;
 
-import java.time.ZonedDateTime;
 import org.springframework.http.HttpStatus;
 
+import java.time.ZonedDateTime;
+
 public class HttpErrorInfo {
-  private final ZonedDateTime timestamp;
-  private final String path;
-  private final HttpStatus httpStatus;
-  private final String message;
+  private ZonedDateTime timestamp;
+  private String path;
+  private HttpStatus httpStatus;
+  private String message;
 
   public HttpErrorInfo() {
     timestamp = null;
@@ -41,5 +42,21 @@ public class HttpErrorInfo {
 
   public String getMessage() {
     return message;
+  }
+
+  public void setTimestamp(ZonedDateTime timestamp) {
+    this.timestamp = timestamp;
+  }
+
+  public void setPath(String path) {
+    this.path = path;
+  }
+
+  public void setHttpStatus(HttpStatus httpStatus) {
+    this.httpStatus = httpStatus;
+  }
+
+  public void setMessage(String message) {
+    this.message = message;
   }
 }
